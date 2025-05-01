@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing Node.js dependencies...
+      - cd app
+      - npm install
+  build:
+    commands:
+      - echo Build phase - nothing to build for this demo
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - app/*
+    - scripts/*
+    - appspec.yml
